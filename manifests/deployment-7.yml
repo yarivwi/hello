@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "workshopsday2aks-04d8"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "workshopsday2aks-04d8"
+  template:
+    metadata:
+      labels:
+        app: "workshopsday2aks-04d8"
+    spec:
+      containers:
+        - name: "workshopsday2aks-04d8"
+          image: "workshopsday2reg.azurecr.io/workshopsday2aks"
+          ports:
+          - containerPort: 8081
